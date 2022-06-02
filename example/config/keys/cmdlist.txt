@@ -1,0 +1,5 @@
+# To generate your own Private Key and Certificate
+openssl req -nodes -newkey rsa:2048 -x509 -keyout backup.key -out backup.crt
+
+# To generate your own Git SSH Keys without password
+ssh-keygen -m PEM -t RSA -b 2048 -q -N "" -C "test.backerit@backerit.com" -f $PWD/ssh.key

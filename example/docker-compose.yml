@@ -1,0 +1,22 @@
+version: "3"
+services:
+  backerit:
+    build: ..
+    image: backerit
+    container_name: backerit
+    restart: unless-stopped
+    environment:
+      - GIT_BRANCH=backup
+      - GIT_EMAIL=test.backerit@backerit.com
+      - GIT_USERNAME=Backerit
+      - GIT_REMOTE_URL=ssh://git@repo.org:22/backerit/remotebackup.git
+      - SCHED_FILE=/workspace/config/scheds.csv
+      - SYNC_ON_INIT=true
+    volumes:
+      - ./monitoring/testOne:/workspace/monitoring/testOne:ro 
+      - ./monitoring/testTwo:/workspace/monitoring/testTwo:ro 
+      - ./scheduleds/source:/workspace/scheduleds/source:ro
+      - ./scheduleds/tests:/workspace/scheduleds/tests:ro
+      - ./restored/testOne:/workspace/restore/monitoring/testOne
+      - ./config/keys/:/workspace/config/keys/
+      - ./config/scheds.csv:/workspace/config/scheds.csv
