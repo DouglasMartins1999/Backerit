@@ -13,12 +13,13 @@ ENV GIT_BRANCH=main \
     MONITOR_PATH=/workspace/backup/monitoring \
     RESTORE_PATH=/workspace/restore
 
-COPY ./scripts/ /tmp/
-
 RUN apt update && \ 
     apt install -y git inotify-tools rsync rsyncrypto cron && \
-    rm -rf /var/lib/apt/lists/* && \
-    mkdir /workspace /workspace/scripts && \
+    rm -rf /var/lib/apt/lists/*
+
+COPY ./scripts/ /tmp/
+
+RUN mkdir /workspace /workspace/scripts && \
     mkdir /workspace/config /workspace/backup /workspace/restore && \
     mkdir /workspace/config/repo /workspace/backup/monitoring /workspace/backup/scheduleds && \
     cd /workspace/config/repo && git init && \

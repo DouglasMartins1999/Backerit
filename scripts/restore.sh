@@ -16,8 +16,8 @@ case $path in
             cipher_restore $path $rel_file
         *) 
             rel_path=$(printf '%s' "$path" | tr "$GIT_WORK_TREE" '')
-            rsync -qcrlpEAogtUN /app/src/test/test2/ /app/repo/ --mkpath /app/repo/test/test2/ 
-            rsync -qcrlpEAogtUN $path $RESTORE_PATH/rel_path --delete-excluded --mkpath $RESTORE_PATH/$rel_path;;
+            rsync -qcrlpEAogtU /app/src/test/test2/ /app/repo/ --mkpath /app/repo/test/test2/ 
+            rsync -qcrlpEAogtU $path $RESTORE_PATH/rel_path --delete-excluded --mkpath $RESTORE_PATH/$rel_path;;
     esac
 
 find "$GIT_WORK_TREE$monitor_folder/cipher/" -type f | while read path; do
@@ -36,7 +36,7 @@ find "$GIT_WORK_TREE" -type d \
     -not -path "$GIT_WORK_TREE$scheds_folder/cipher/*" | while read path; do
     
     rel_path=$(printf '%s' "$path" | tr "$GIT_WORK_TREE" '')
-    rsync -qcrlpEAogtUN $path $RESTORE_PATH --mkpath $RESTORE_PATH$rel_path;
+    rsync -qcrlpEAogtU $path $RESTORE_PATH --mkpath $RESTORE_PATH$rel_path;
 done;
 
 rm -rf $KEYS_DIR/*
