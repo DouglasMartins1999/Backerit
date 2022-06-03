@@ -8,6 +8,7 @@ ENV GIT_BRANCH=main \
     SYNC_CERT=/workspace/config/keys/backup.crt \
     CRON_FILE=/workspace/config/.cron \
     KEYS_DIR=/workspace/config/.keys \
+    BACKUP_ROOT=/workspace/backup
     SCHED_PATH=/workspace/backup/scheduleds \
     MONITOR_PATH=/workspace/backup/monitoring \
     RESTORE_PATH=/workspace/restore
@@ -15,7 +16,7 @@ ENV GIT_BRANCH=main \
 COPY ./scripts/ /tmp/
 
 RUN apt update && \ 
-    apt install -y git inotify-tools rsyncrypto cron && \
+    apt install -y git inotify-tools rsync rsyncrypto cron && \
     rm -rf /var/lib/apt/lists/* && \
     mkdir /workspace /workspace/scripts && \
     mkdir /workspace/config /workspace/backup /workspace/restore && \

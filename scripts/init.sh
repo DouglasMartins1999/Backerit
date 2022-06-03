@@ -34,14 +34,14 @@ cron start
 inotifywait -m --excludei "\.((tmp)|(swp))$" -r $MONITOR_PATH -e create -e moved_to -e close_write -e moved_from -e delete -e attrib |
     while read path action file; do
         rel_file=$(realpath --relative-to="$MONITOR_PATH" "$path")
+        must_encrypt=$(echo "$path" | sed -n '/apple/p')
 
         if [ -d $path ]
         then
             rel_file=$(realpath --relative-to="$MONITOR_PATH" "$file")
-            rsyncrypto "$path" "$GIT_WORK_TREE" "$KEYS_DIR" "$SYNC_CERT" -r -c --delete -v
-            /workspace/scripts/owner.sh $path $GIT_WORK_TREE "/workspace"
+            /workspace/scripts/copy.sh $MONITOR_PATH $path
         fi 
 
         message="[$rel_file] $action"
-        ./scripts/commit.sh "$path" "$message"
+        /workspace/scripts/commit.sh "$path" "$message"
     done
