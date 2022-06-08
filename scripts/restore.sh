@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 /workspace/scripts/git.sh
 
 monitor_folder=$(realpath --relative-to="$BACKUP_ROOT" "$MONITOR_PATH")

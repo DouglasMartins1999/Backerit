@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 if [ $(git remote | wc -l) -eq 0 ] 
 then
     touch -a $GIT_SSH_KEY

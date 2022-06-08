@@ -1,4 +1,4 @@
-#! /bin/sh
+#!/bin/bash
 echo "$1 $2"
 
 case $2 in

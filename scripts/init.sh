@@ -1,12 +1,8 @@
-#!/bin/sh
+#!/bin/bash
 
 # Git Repo Setup
 /workspace/scripts/git.sh
-
-if [ ! "$SYNC_ON_INIT" = "" ]
-then
-    /workspace/scripts/sync.sh
-fi
+/workspace/scripts/sync.sh
 
 # Cron Tab Setup
 rm -f $CRON_FILE

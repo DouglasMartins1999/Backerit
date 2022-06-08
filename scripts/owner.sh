@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 find $1 | while read path; do
     dest=$(realpath --relative-to="$3" "$path")
     
