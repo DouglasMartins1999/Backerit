@@ -1,5 +1,7 @@
 #!/bin/bash
 
+touch $NTFY_FILE
+
 inotifywait -m \
     --excludei "\.((tmp)|(swp))$" \
     --fromfile $NTFY_FILE \
