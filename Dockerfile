@@ -24,7 +24,7 @@ RUN mkdir /workspace /workspace/scripts && \
     mkdir /workspace/config/repo /workspace/backup/monitoring /workspace/backup/scheduleds && \
     cd /workspace/config/repo && git init && \
     printenv | grep -v "no_proxy" >> /etc/environment && \
-    cd /tmp && tar -xf preserve.tar && \
+    cd /tmp && tar -xf setup/.own.tar && \
     mv /tmp/preserve/hooks/* /workspace/config/repo/.git/hooks && \
     mv /tmp/preserve/git-preserve-permissions /bin && \
     mv /tmp/* /workspace/scripts  && \

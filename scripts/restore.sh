@@ -1,5 +1,5 @@
 #!/bin/bash
-/workspace/scripts/git.sh
+/workspace/scripts/setup/repo.sh
 
 monitor_folder=$(realpath --relative-to="$BACKUP_ROOT" "$MONITOR_PATH")
 scheds_folder=$(realpath --relative-to="$BACKUP_ROOT" "$SCHED_PATH")
@@ -7,7 +7,7 @@ scheds_folder=$(realpath --relative-to="$BACKUP_ROOT" "$SCHED_PATH")
 cipher_restore() {
     rel_file=$(realpath --relative-to="$GIT_WORK_TREE" "$1")
     rsyncrypto -d "$1" "$RESTORE_PATH/$2" "$KEYS_DIR/$2.key" "$SYNC_MAIN" -v
-    /workspace/scripts/owner.sh "$1" "$RESTORE_PATH" "$GIT_WORK_TREE"
+    /workspace/scripts/actions/owner.sh "$1" "$RESTORE_PATH" "$GIT_WORK_TREE"
 }
 
 find "$GIT_WORK_TREE$monitor_folder/cipher/" -type f | while read path; do
