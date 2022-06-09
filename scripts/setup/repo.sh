@@ -1,6 +1,5 @@
 #!/bin/bash
-if [ $(git remote | wc -l) -eq 0 ] 
-then
+if [ $(git remote | wc -l) -eq 0 ]; then
     touch -a $GIT_SSH_KEY
     chmod 600 $GIT_SSH_KEY
     echo "IdentityFile $GIT_SSH_KEY" >> /etc/ssh/ssh_config 

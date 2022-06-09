@@ -8,8 +8,7 @@ echo ""
 echo "Scheduling Backup to Following Folders:"
 echo ""
 
-tail -n +2 $SCHED_FILE | while IFS=";" read -r path cron
-do
+tail -n +2 $SCHED_FILE | while IFS=";" read -r path cron; do
   echo "Folder: $path"
   echo "Cron Exp: $cron"
   echo ""
