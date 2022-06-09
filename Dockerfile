@@ -1,7 +1,6 @@
 FROM ubuntu:22.04
 
-ENV GIT_BRANCH=main \
-    GIT_DIR=/workspace/config/repo/.git \
+ENV GIT_DIR=/workspace/config/repo/.git \
     GIT_WORK_TREE=/workspace/config/repo \
     GIT_SSH_KEY=/workspace/config/defs/ssh.key \
     SYNC_MAIN=/workspace/config/defs/backup.key \

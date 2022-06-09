@@ -39,7 +39,7 @@ Para fazer backups periódicos, o volume deve ser montado dentro de  `/workspace
 
 Há três variáveis de ambiente que são obrigatórias para a configuração do git: `GIT_EMAIL`, `GIT_USERNAME`, `GIT_REMOTE_URL`, contendo respectivamente, o email e nome de usuário salvos nos commits, e a URL do repositório remoto. Para acesso via HTTP, o nome de usuário e senha deve ser informado na URL. Por ex: https://username:password@github.com/username/repository/
 
-Para acesso SSH, a URL deve iniciar com ssh://, e a chave deve ser mapeada para `/workspace/config/keys/ssh.key`. Você pode, opcionalmente, informar o nome da branch a ser usada no backup definindo a variável `GIT_BRANCH`, que por padrão tem o valor *main*. Por fim, se o repositório remoto não tiver nenhum arquivo backup, você pode definir a variável `SYNC_ON_INIT` como true para que o Backerit force o backup e push de todos os arquivos ao iniciar.
+Para acesso SSH, a URL deve iniciar com ssh://, e a chave deve ser mapeada para `/workspace/config/keys/ssh.key`. Opcionalmente, se o repositório remoto não tiver nenhum arquivo backup, você pode definir a variável `SYNC_ON_INIT` como true para que o Backerit force o backup e push de todos os arquivos ao iniciar.
 
 
 
@@ -72,7 +72,6 @@ A maior parte das pastas e nomes de arquivos do container podem ser customizados
 
 | VARIÁVEL       | FUNÇÃO                                                       | VALOR PADRÂO                      |
 | -------------- | :----------------------------------------------------------- | --------------------------------- |
-| GIT_BRANCH     | Definir nome da branch a ser usada nos backups               | main                              |
 | GIT_WORK_TREE  | Diretório com repositório git dentro do container            | /workspace/config/repo            |
 | GIT_DIR        | Diretório .git dentro do container                           | /workspace/config/repo/.git       |
 | GIT_EMAIL      | Email usado nos commits                                      |                                   |

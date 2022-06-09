@@ -6,7 +6,6 @@ services:
     container_name: backerit
     restart: unless-stopped
     environment:
-      - GIT_BRANCH=backup
       - GIT_EMAIL=test.backerit@backerit.com
       - GIT_USERNAME=Backerit
       - GIT_REMOTE_URL=ssh://git@repo.org:22/backerit/remotebackup.git
