@@ -15,4 +15,6 @@ then
     git branch -m $GIT_BRANCH
     git remote add origin $GIT_REMOTE_URL
     git pull --set-upstream origin $GIT_BRANCH
+    
+    /workspace/scripts/sync.sh
 fi
