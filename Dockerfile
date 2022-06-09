@@ -3,9 +3,10 @@ FROM ubuntu:22.04
 ENV GIT_BRANCH=main \
     GIT_DIR=/workspace/config/repo/.git \
     GIT_WORK_TREE=/workspace/config/repo \
-    GIT_SSH_KEY=/workspace/config/keys/ssh.key \
-    SYNC_MAIN=/workspace/config/keys/backup.key \
-    SYNC_CERT=/workspace/config/keys/backup.crt \
+    GIT_SSH_KEY=/workspace/config/defs/ssh.key \
+    SYNC_MAIN=/workspace/config/defs/backup.key \
+    SYNC_CERT=/workspace/config/defs/backup.crt \
+    NTFY_FILE=/workspace/config/defs/notify.txt \
     CRON_FILE=/workspace/config/.cron \
     KEYS_DIR=/workspace/config/.keys \
     BACKUP_ROOT=/workspace/backup \

@@ -1,8 +1,6 @@
 #!/bin/bash
 if [ ! "$SYNC_ON_INIT" = "" ]
 then
-    /workspace/scripts/setup/repo.sh
-
     tail -n +2 $SCHED_FILE | while IFS=";" read -r path cron; do
         if [ -d $path ]; then
             /workspace/scripts/actions/copy.sh "$SCHED_PATH" "$path"

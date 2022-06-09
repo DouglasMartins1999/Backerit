@@ -2,6 +2,7 @@
 
 inotifywait -m \
     --excludei "\.((tmp)|(swp))$" \
+    --fromfile $NTFY_FILE \
     -r $MONITOR_PATH \
     -e create \
     -e moved_to \
