@@ -1,6 +1,6 @@
 # Backerit - Secure Backup using Docker & Git
 
-
+> **ATENÇÃO! Software Depreciado**: O backerit foi desativado e dará lugar a outra ferramenta com maior performance no futuro. O repositório permanecerá para fins didáticos
 
 ## O que é?
 
